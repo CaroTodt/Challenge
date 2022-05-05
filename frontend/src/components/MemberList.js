@@ -35,6 +35,7 @@ const MemberList = () => {
 		membersServices.create(data)
 			.then(response => {
 				refreshList();
+				alert ("Member was successfully added")
 			})
 			.catch(e => {
 				alert('The SSN must be unique');

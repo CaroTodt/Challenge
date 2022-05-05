@@ -13,6 +13,7 @@ const AddMember = (props) => {
 
 	const onSubmit = (data) => {
 		props.saveMember(data)
+		reset()
 	}
 
 	return (

@@ -34,8 +34,11 @@ Technical React Challenge - Newcombin
 - [x] In case of a wrong insertion attempt, the error must be reported.
 - [x] After 2 minutes of inactivity, the table must be refreshed automatically.
 
-### API Validations
+## API Validations
 - [x] **firstName, lastName and address:** More than 1 character, no spaces at the sides (trim)
 - [x] **ssn:** Have the format ###-##-#### (each # is a number, hyphens are mandatory)
 - [x] If the front end does not meet the validations you must disable the submit button.
 
+## Screenshot of the project
+
+<img src="images/screenshot.png" alt="challenge-screenshot"/>
