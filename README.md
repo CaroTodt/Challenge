@@ -36,6 +36,6 @@ Technical React Challenge - Newcombin
 
 ### API Validations
 - [x] **firstName, lastName and address:** More than 1 character, no spaces at the sides (trim)
-- [x]**ssn:** Have the format ###-##-#### (each # is a number, hyphens are mandatory)
+- [x] **ssn:** Have the format ###-##-#### (each # is a number, hyphens are mandatory)
 - [x] If the front end does not meet the validations you must disable the submit button.
 
