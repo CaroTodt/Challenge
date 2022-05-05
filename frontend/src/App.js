@@ -29,11 +29,11 @@ function App() {
 	handleLogin("sarah", "connor")
 
 	return (
-		<div>
+		<>
 			<header>
 				<nav className="navbar navbar-expand navbar-dark bg-dark">
 					<Link to={" "} className="navbar-brand">
-						Home
+						&nbsp;Home
 					</Link>
 					<div className="navbar-nav mr-auto">
 						<li className="nav-item">
@@ -53,15 +53,20 @@ function App() {
 					</Routes>
 				</div>
 			</main>
-			<footer className="footer">
-				<div className="container">
+			<footer id="footer" className="bg-light text-center text-lg-start">
+				<div className="text-center p-3" >
 					<div className="row">
-						<div className="col-sm" ><span className="text-muted">coprigth</span></div>
-						<div className="col-sm" ><span className="text-muted">All rights reserved.</span></div>
+						<div className="col">
+							©  Copyright
+						</div>
+						<div className="col">
+							All rights reserved.
+						</div>
 					</div>
+
 				</div>
 			</footer>
-		</div >
+		</>
 	);
 }
 export default App;
