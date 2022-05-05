@@ -28,7 +28,7 @@ const AddMember = (props) => {
 						id="firstName"
 						name="firstName"
 						placeholder='First Name'
-						{...register("firstName", { required: true, minLength: 2, maxLength: 30, pattern: /^([^\s]+)$/ })}
+						{...register("firstName", { required: true, minLength: 2, maxLength: 30, pattern: /^[A-Za-z]+$/i  })}
 					/>
 					{errors.firstName && <p className="error">Please check the First Name</p>}
 				</div>
@@ -41,7 +41,7 @@ const AddMember = (props) => {
 						id="lastName"
 						name="lastName"
 						placeholder='Last Name'
-						{...register("lastName", { required: true, minLength: 2, maxLength: 30, pattern: /^([^\s]+)$/ })}
+						{...register("lastName", { required: true, minLength: 2, valueAsNumber: false,maxLength: 30,  pattern: /^[A-Za-z]+$/i  })}
 					/>
 					{errors.lastName && <p className="error">Please check the Last Name</p>}
 				</div>
