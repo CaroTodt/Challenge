@@ -26,12 +26,14 @@ const MemberList = () => {
 	};
 
 	const saveMember = (member) => {
+	
 		var data = {
-			firstName: member.firstName,
-			lastName: member.lastName,
-			address: member.address,
+			firstName: member.firstName.trim(),
+			lastName: member.lastName.trim(),
+			address: member.address.trim(),
 			ssn: member.ssn,
 		};
+		console.log(data)
 		membersServices.create(data)
 			.then(response => {
 				refreshList();

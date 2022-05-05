@@ -7,7 +7,7 @@ const AddMember = (props) => {
 		register,
 		handleSubmit,
 		reset,
-		formState: { isDirty, isValid , errors},
+		formState: { isDirty, isValid, errors },
 	} = useForm({ mode: "onChange" })
 
 
@@ -28,7 +28,7 @@ const AddMember = (props) => {
 						id="firstName"
 						name="firstName"
 						placeholder='First Name'
-						{...register("firstName", { required: true, maxLength: 30 })}
+						{...register("firstName", { required: true, minLength: 2, maxLength: 30, pattern: /^([^\s]+)$/ })}
 					/>
 					{errors.firstName && <p className="error">Please check the First Name</p>}
 				</div>
@@ -41,7 +41,7 @@ const AddMember = (props) => {
 						id="lastName"
 						name="lastName"
 						placeholder='Last Name'
-						{...register("lastName", { required: true, maxLength: 30 })}
+						{...register("lastName", { required: true, minLength: 2, maxLength: 30, pattern: /^([^\s]+)$/ })}
 					/>
 					{errors.lastName && <p className="error">Please check the Last Name</p>}
 				</div>
@@ -54,7 +54,7 @@ const AddMember = (props) => {
 						id="address"
 						name="address"
 						placeholder='Address'
-						{...register("address", { required: true, maxLength: 30 })}
+						{...register("address", { required: true, minLength: 2, maxLength: 30})}
 					/>
 					{errors.address && <p className="error">Please check the Address</p>}
 
@@ -98,7 +98,7 @@ const AddMember = (props) => {
 						}} />
 					</div>
 					<div className="col">
-						<button type="submit" className="btn btn-primary"  disabled={!isValid | !isDirty}>
+						<button type="submit" className="btn btn-primary" disabled={!isValid | !isDirty}>
 							Save
 						</button>
 					</div>
