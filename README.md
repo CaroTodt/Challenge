@@ -13,7 +13,7 @@ Technical React Challenge - Newcombin
 
 ## Start Frontend
 * Go to the folder frontend
-* Install the dependencies with npm install
+* Install the dependencies with `npm install`
 * Run the frontend with the command `npm start`
 
 ## Library used in the frontend 
