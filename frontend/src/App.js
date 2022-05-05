@@ -63,7 +63,6 @@ function App() {
 							All rights reserved.
 						</div>
 					</div>
-
 				</div>
 			</footer>
 		</>

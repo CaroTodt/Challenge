@@ -14,10 +14,10 @@ const MemberList = () => {
 		membersServices.getAll()
 			.then(members => {
 				setMembers(members);
-
 			})
 			.catch(e => {
-				alert('Error to load data from the server');
+				console.log('Error to load data from the server');
+				retrieveMembers();
 			});
 	};
 
