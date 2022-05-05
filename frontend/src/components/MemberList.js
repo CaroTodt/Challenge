@@ -4,84 +4,84 @@ import AddMember from "./AddMember";
 
 const MemberList = () => {
 
-  const [members, setMembers] = useState([]);
+	const [members, setMembers] = useState([]);
 
-  useEffect(() => {
-    retrieveMembers();
-  }, []);
+	useEffect(() => {
+		retrieveMembers();
+	}, []);
 
-  const retrieveMembers = () => {
-    membersServices.getAll()
-      .then(members => {
-        setMembers(members);
+	const retrieveMembers = () => {
+		membersServices.getAll()
+			.then(members => {
+				setMembers(members);
 
-      })
-      .catch(e => {
-        alert('Error to load data from the server');
-      });
-  };
+			})
+			.catch(e => {
+				alert('Error to load data from the server');
+			});
+	};
 
-  const refreshList = () => {
-    retrieveMembers();
-  };
+	const refreshList = () => {
+		retrieveMembers();
+	};
 
-  const saveMember = (member) => {
-    var data = {
-      firstName: member.firstName,
-      lastName: member.lastName,
-      address: member.address,
-      ssn: member.ssn,
-    };
-    membersServices.create(data)
-      .then(response => {
-        refreshList();
-      })
-      .catch(e => {
-        alert('Error to add a new member');
-      });
-  };
+	const saveMember = (member) => {
+		var data = {
+			firstName: member.firstName,
+			lastName: member.lastName,
+			address: member.address,
+			ssn: member.ssn,
+		};
+		membersServices.create(data)
+			.then(response => {
+				refreshList();
+			})
+			.catch(e => {
+				alert('The SSN must be unique');
+			});
+	};
 
-  return (
-    <div className="row">
-      <div className="col">
-        <AddMember saveMember={saveMember} />
-      </div>
-      <div className="col">
-        <div className="table-responsive">
-          <table className="table table-striped">
-            <thead>
-              <tr>
-                <th>First Name</th>
-                <th> Last Name</th>
-                <th>Address</th>
-                <th>SSN</th>
-              </tr>
-            </thead>
-            <tbody>
-              {members.length > 0 ? (
-                members.map(member => {
-                  return (
-                    <tr key={member.ssn}>
-                      <td>{member.firstName}</td>
-                      <td>{member.lastName}</td>
-                      <td>{member.address}</td>
-                      <td>
-                        {member.ssn}
-                      </td>
-                    </tr>
-                  )
-                })) : (
-                <tr>
-                  <td colSpan={4}>No members found</td>
-                </tr>
-              )
-              }
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  )
+	return (
+		<div className="row">
+			<div className="col">
+				<AddMember saveMember={saveMember} />
+			</div>
+			<div className="col">
+				<div className="table-responsive">
+					<table className="table table-striped">
+						<thead>
+							<tr>
+								<th>First Name</th>
+								<th> Last Name</th>
+								<th>Address</th>
+								<th>SSN</th>
+							</tr>
+						</thead>
+						<tbody>
+							{members.length > 0 ? (
+								members.map(member => {
+									return (
+										<tr key={member.ssn}>
+											<td>{member.firstName}</td>
+											<td>{member.lastName}</td>
+											<td>{member.address}</td>
+											<td>
+												{member.ssn}
+											</td>
+										</tr>
+									)
+								})) : (
+								<tr>
+									<td colSpan={4}>No members found</td>
+								</tr>
+							)
+							}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	)
 
 }
 

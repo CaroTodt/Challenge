@@ -69,7 +69,8 @@ const AddMember = (props) => {
 						{...register("ssn",
 							{
 								required: true,
-								pattern: /^((\d{3}-?\d{2}-?\d{4})|(X{3}-?X{2}-?X{4}))$/
+								pattern: /^((\d{3}-\d{2}-\d{4})|(X{3}-X{2}-X{4}))$/
+
 							})}
 					/>
 					{errors.ssn && <p className="error">Please check the ssn</p>}
