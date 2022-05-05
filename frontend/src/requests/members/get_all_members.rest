@@ -1,0 +1,4 @@
+GET http://localhost:8081/api/members 
+Content-Type: application/json
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsIm5hbWUiOiJzYXJhaCIsImFkbWluIjpmYWxzZSwiaWF0IjoxNjUxNzU3ODQxLCJleHAiOjE2NTE3NTg3NDF9.a6VjpiBMumyPkFlLiwMtotncMns5MOShsg97-uJ4zaQ
+
